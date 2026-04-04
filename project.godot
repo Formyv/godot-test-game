@@ -1,0 +1,13 @@
+[application]
+config/name="Simple Test Game"
+config/description="A simple test game created with Godot"
+run/main_scene="res://scenes/main.tscn"
+config/icon="res://icon.png"
+
+[display]
+window/size/width=800
+window/size/height=600
+window/stretch/mode="canvas_items"
+
+[rendering]
+quality/driver/driver_name="GLES3"
