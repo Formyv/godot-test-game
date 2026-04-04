@@ -2,8 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
-var velocity = Vector2.ZERO
+const GRAVITY = 980.0
 
 func _physics_process(delta):
 	# 处理移动输入
@@ -15,7 +14,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 	
 	# 应用重力
-	velocity.y += gravity * delta
+	velocity.y += GRAVITY * delta
 	
 	# 移动角色
 	move_and_slide()
