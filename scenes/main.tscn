@@ -1,42 +1,49 @@
-[gd_scene format=3 uid="uid://b4k5a3e4a3b4"]
+[gd_scene format=3 uid="uid://b4k5a3e4a3b7"]
 
-[ext_resource type="Script" uid="uid://qq03yvct6cyjt" path="res://scripts/player.gd" id="1_78s0h"]
+[ext_resource type="Script" uid="uid://b4k5a3e4a3b8" path="res://scripts/game.gd" id="1_78s0h"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
-radius = 16.0
-height = 32.0
+[node name="Main" type="Node2D" unique_id=1752477087]
+script = ExtResource("1_78s0h")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(800, 20)
-
-[node name="Main" type="Node2D" unique_id=1752477084]
-position = Vector2(0, -1)
-
-[node name="Background" type="ColorRect" parent="." unique_id=1875446243]
-color = Color(0.1, 0.1, 0.2, 1)
+[node name="Background" type="ColorRect" parent="." unique_id=1875446246]
+color = Color(0.1, 0.1, 0.1, 1)
 size = Vector2(800, 600)
 z_index = -1
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1454646222]
-position = Vector2(400, 300)
-script = ExtResource("1_78s0h")
+[node name="GameArea" type="ColorRect" parent="." unique_id=1234567893]
+position = Vector2(250, 50)
+size = Vector2(300, 600)
+color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1995732363]
-position = Vector2(1, -1)
-shape = SubResource("CapsuleShape2D_1")
+[node name="ScoreLabel" type="Label" parent="." unique_id=1234567894]
+position = Vector2(570, 100)
+size = Vector2(200, 50)
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_1")
 
-[node name="Sprite" type="ColorRect" parent="Player" unique_id=1234567890]
-position = Vector2(-16, -16)
-size = Vector2(32, 32)
-color = Color(0, 1, 0, 1)
+[node name="NextPieceArea" type="ColorRect" parent="." unique_id=1234567895]
+position = Vector2(570, 200)
+size = Vector2(200, 200)
+color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="Ground" type="StaticBody2D" parent="." unique_id=636239008]
-position = Vector2(400, 500)
+[node name="NextPieceLabel" type="Label" parent="." unique_id=1234567896]
+position = Vector2(570, 170)
+size = Vector2(200, 30)
+text = "Next Piece"
+label_settings = SubResource("LabelSettings_1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1997965957]
-shape = SubResource("RectangleShape2D_1")
+[node name="StartButton" type="Button" parent="." unique_id=1234567897]
+position = Vector2(570, 420)
+size = Vector2(200, 50)
+text = "Start Game"
 
-[node name="Sprite" type="ColorRect" parent="Ground" unique_id=9876543210]
-position = Vector2(-400, -10)
-size = Vector2(800, 20)
-color = Color(0.5, 0.3, 0.1, 1)
+[node name="GameOverLabel" type="Label" parent="." unique_id=1234567898]
+position = Vector2(350, 250)
+size = Vector2(200, 50)
+text = "Game Over"
+label_settings = SubResource("LabelSettings_1")
+visible = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_1"]
+font_size = 24
+font_color = Color(1, 1, 1, 1)
