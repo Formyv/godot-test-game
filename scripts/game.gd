@@ -1,7 +1,7 @@
 extends Node2D
 
 const GRID_WIDTH = 10
-const GRID_HEIGHT = 20
+const GRID_HEIGHT = 16
 const CELL_SIZE = 30
 
 var grid = []
