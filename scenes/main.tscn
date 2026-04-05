@@ -16,7 +16,7 @@ z_index = -1
 
 [node name="GameArea" type="ColorRect" parent="." unique_id=1234567893]
 position = Vector2(250, 50)
-size = Vector2(300, 600)
+size = Vector2(300, 500)
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1234567894]
