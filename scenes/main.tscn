@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b4k5a3e4a3b8" path="res://scripts/game.gd" id="1_78s0h"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_1"]
+font_size = 24
+font_color = Color(1, 1, 1, 1)
+
 [node name="Main" type="Node2D" unique_id=1752477087]
 script = ExtResource("1_78s0h")
 
@@ -43,7 +47,3 @@ size = Vector2(200, 50)
 text = "Game Over"
 label_settings = SubResource("LabelSettings_1")
 visible = false
-
-[sub_resource type="LabelSettings" id="LabelSettings_1"]
-font_size = 24
-font_color = Color(1, 1, 1, 1)
