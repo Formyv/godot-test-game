@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4k5a3e4a3b4"]
+[gd_scene format=3 uid="uid://b4k5a3e4a3b4"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_78s0h"]
+[ext_resource type="Script" uid="uid://qq03yvct6cyjt" path="res://scripts/player.gd" id="1_78s0h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1"]
 radius = 16.0
@@ -9,17 +9,42 @@ height = 32.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
 size = Vector2(800, 20)
 
-[node name="Main" type="Node2D"]
+[sub_resource type="ColorRect" id="ColorRect_1"]
+color = Color(1, 1, 1, 1)
+size = Vector2(32, 32)
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[sub_resource type="ColorRect" id="ColorRect_2"]
+color = Color(0.5, 0.5, 0.5, 1)
+size = Vector2(800, 20)
+
+[node name="Main" type="Node2D" unique_id=1752477084]
+position = Vector2(0, -1)
+
+[node name="Background" type="ColorRect" parent="." unique_id=1875446243]
+color = Color(0.1, 0.1, 0.2, 1)
+size = Vector2(800, 600)
+z_index = -1
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1454646222]
 position = Vector2(400, 300)
 script = ExtResource("1_78s0h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="./Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1995732363]
+position = Vector2(1, -1)
 shape = SubResource("CapsuleShape2D_1")
 
-[node name="Ground" type="StaticBody2D" parent="."]
+[node name="Sprite" type="ColorRect" parent="Player" unique_id=1234567890]
+position = Vector2(-16, -16)
+size = Vector2(32, 32)
+color = Color(0, 1, 0, 1)
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=636239008]
 position = Vector2(400, 500)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="./Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1997965957]
 shape = SubResource("RectangleShape2D_1")
+
+[node name="Sprite" type="ColorRect" parent="Ground" unique_id=9876543210]
+position = Vector2(-400, -10)
+size = Vector2(800, 20)
+color = Color(0.5, 0.3, 0.1, 1)
