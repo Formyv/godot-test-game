@@ -129,7 +129,7 @@ func draw_current_piece():
         for col in range(shape[row].size()):
             if shape[row][col] == 1:
                 var cell = ColorRect.new()
-                cell.name = "Cell_{}_{}".format(y + row, x + col)
+                cell.name = "Cell_%d_%d" % [y + row, x + col]
                 cell.position = Vector2((x + col) * CELL_SIZE, (y + row) * CELL_SIZE)
                 cell.size = Vector2(CELL_SIZE - 1, CELL_SIZE - 1)
                 cell.color = color
@@ -153,7 +153,7 @@ func draw_next_piece():
         for col in range(shape[row].size()):
             if shape[row][col] == 1:
                 var cell = ColorRect.new()
-                cell.name = "NextCell_{}_{}".format(row, col)
+                cell.name = "NextCell_%d_%d" % [row, col]
                 cell.position = Vector2(offset_x + col * CELL_SIZE, offset_y + row * CELL_SIZE)
                 cell.size = Vector2(CELL_SIZE - 1, CELL_SIZE - 1)
                 cell.color = color
@@ -273,7 +273,7 @@ func check_lines():
     # 更新得分
     if lines_cleared > 0:
         score += lines_cleared * 100
-        $ScoreLabel.text = "Score: {}".format(score)
+        $ScoreLabel.text = "Score: %d" % score
         
         # 重新绘制网格
         clear_pieces()
@@ -288,7 +288,7 @@ func draw_grid():
             if grid[y][x] != -1:
                 var color = tetromino_colors[grid[y][x]]
                 var cell = ColorRect.new()
-                cell.name = "Cell_{}_{}".format(y, x)
+                cell.name = "Cell_%d_%d" % [y, x]
                 cell.position = Vector2(x * CELL_SIZE, y * CELL_SIZE)
                 cell.size = Vector2(CELL_SIZE - 1, CELL_SIZE - 1)
                 cell.color = color
